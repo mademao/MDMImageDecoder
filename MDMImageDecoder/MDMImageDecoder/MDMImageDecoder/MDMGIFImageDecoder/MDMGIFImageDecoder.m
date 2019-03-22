@@ -31,6 +31,8 @@
     
     long _currentDataOffset;
     UIImage * _lastDecodedImage;
+    
+    BOOL hasDisposeDoNot;
 }
 
 - (int)readImageData:(GifByteType *)buf byLength:(int)length;
@@ -196,6 +198,10 @@ END:
                                         CGColorSpaceCreateDeviceRGB(),
                                         kCGBitmapByteOrderDefault|kCGImageAlphaPremultipliedLast);
         _contextRefArray[_currentIndexToDecode] = context;
+        void *nextContextBuffer = NULL;
+        if (_currentIndexToDecode < self.frameCount - 1) {
+            nextContextBuffer = (void *)_contextBuffer + self.imageBytesPerFrame * (_currentIndexToDecode + 1);
+        }
         
         GifRecordType recordType;
         do {
@@ -226,14 +232,10 @@ END:
                 case IMAGE_DESC_RECORD_TYPE: {
                     CGImageRef image = NULL;
                     NSLog(@"-->decode %@", @(_graphicsControlBlock.DisposalMode));
-//                    if (_graphicsControlBlock.DisposalMode == DISPOSE_DO_NOT) {
-                        NSInteger lastIndexDecode = _currentIndexToDecode - 1;
-                        if (lastIndexDecode >= 0) {
-                            void *lastContextBuffer = (void *)_contextBuffer + self.imageBytesPerFrame * lastIndexDecode;
-                            memcpy((void *)contextBuffer, lastContextBuffer, self.imageBytesPerFrame);
-                        }
-//                    }
-                    errorCode = renderGifFrameWithBufferSize(_gifFileType, _gifRowType, context, contextBuffer, _graphicsControlBlock, &image, self.imageBytesPerFrame);
+                    errorCode = renderGifFrameWithBufferSize(_gifFileType, _gifRowType, context, contextBuffer, nextContextBuffer, hasDisposeDoNot, _graphicsControlBlock, &image, self.imageBytesPerFrame);
+                    if (_graphicsControlBlock.DisposalMode == DISPOSE_DO_NOT) {
+                        hasDisposeDoNot = YES;
+                    }
                     if (errorCode) {
                         goto END;
                     }

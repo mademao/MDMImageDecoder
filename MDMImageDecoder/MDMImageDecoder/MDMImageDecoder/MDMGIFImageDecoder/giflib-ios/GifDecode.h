@@ -61,7 +61,7 @@ int renderGifFrame( GifFileType *gifFile, GifRowType rowBuffer,
                    CGImageRef *image );
 // Specified buffer size for bytes align, optimization for Core Animation 
 int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
-                                 CGContextRef context, PixelRGBA *contextBuffer,
+                                 CGContextRef context, PixelRGBA *contextBuffer, PixelRGBA *nextContextBuffer, BOOL hasDisposeDoNot,
                                  GraphicsControlBlock gcb,
                                  CGImageRef *image, size_t bufferSize);
 

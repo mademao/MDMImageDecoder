@@ -78,7 +78,7 @@ void renderGifRowWithRowWidth( PixelRGBA *contextBuffer, GifRowType rowBuffer,
 }
 
 int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
-                   CGContextRef context, PixelRGBA *contextBuffer,
+                   CGContextRef context, PixelRGBA *contextBuffer, PixelRGBA *nextContextBuffer, BOOL hasDisposeDoNot,
                    GraphicsControlBlock gcb,
                    CGImageRef *image, size_t bufferSize)
 {
@@ -110,7 +110,7 @@ int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
         rowBuffer[i] = transIndex;
     }
     
-    if ( gcb.DisposalMode == DISPOSE_PREVIOUS ) {
+    if ( gcb.DisposalMode == DISPOSE_PREVIOUS && nextContextBuffer) {
         tmp = malloc( bufferSize );
         if ( tmp == NULL )
             return GIF_ERROR_OUT_MEMORY;
@@ -137,21 +137,31 @@ int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
         }
     }
     *image = CGBitmapContextCreateImage( context );
-    switch ( gcb.DisposalMode ) {
-        case DISPOSE_BACKGROUND:
-//            NSLog(@"----->%@", @(gifFile->SBackGroundColor));
-            memset( contextBuffer, 0, bufferSize );
-            break;
-        case DISPOSE_PREVIOUS:
-            memcpy( contextBuffer, tmp, bufferSize );
-            free( tmp );
-            tmp = NULL;
-            break;
-        case DISPOSAL_UNSPECIFIED:
-        case DISPOSE_DO_NOT:
-        default:
-            // Do nothing
-            break;
+    
+    if (nextContextBuffer) {
+        switch ( gcb.DisposalMode ) {
+            case DISPOSE_DO_NOT: {
+                memcpy(nextContextBuffer, contextBuffer, bufferSize);
+                break;
+            }
+            case DISPOSE_BACKGROUND: {
+                if (hasDisposeDoNot) {
+                    memcpy(nextContextBuffer, contextBuffer, bufferSize);
+                } else {
+                    memset(nextContextBuffer, gifFile->SBackGroundColor, bufferSize);
+//                    memset(nextContextBuffer, 0, bufferSize);
+                }
+                break;
+            }
+            case DISPOSE_PREVIOUS: {
+                memcpy(nextContextBuffer, tmp, bufferSize);
+                free(tmp);
+                tmp = NULL;
+                break;
+            }
+            default:
+                break;
+        }
     }
     
     return 0;
@@ -163,7 +173,7 @@ int renderGifFrame( GifFileType *gifFile, GifRowType rowBuffer,
                    GraphicsControlBlock gcb,
                    CGImageRef *image ) {
     
-    return renderGifFrameWithBufferSize(gifFile, rowBuffer, context, contextBuffer, gcb, image, gifFile->SWidth * 4 * gifFile->SHeight);
+    return renderGifFrameWithBufferSize(gifFile, rowBuffer, context, contextBuffer, NULL, NO, gcb, image, gifFile->SWidth * 4 * gifFile->SHeight);
     
 //    Byte *tmp = NULL;
 //    unsigned long bufferSize = gifFile->SWidth * 4 * gifFile->SHeight;
