@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <YYWebImage.h>
 
 @interface ViewController ()
+
+@property (nonatomic, strong) YYAnimatedImageView *imageView;
 
 @end
 
@@ -16,7 +19,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.imageView = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    self.imageView.center = self.view.center;
+    self.imageView.backgroundColor = [UIColor whiteColor];
+    self.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.imageView.layer.borderWidth = 1.0f;
+    [self.view addSubview:self.imageView];
+    
+    [self showDisposeBackgroundGIF];
+//    [self showPNG];
+}
+
+- (void)showDisposeBackgroundGIF
+{
+    NSString *file = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"gif"];
+    self.imageView.image = [YYImage imageWithContentsOfFile:[file stringByAppendingPathComponent:@"wolaile.gif"]];
+}
+
+- (void)showPNG
+{
+    NSString *file = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"png"];
+    self.imageView.image = [YYImage imageWithContentsOfFile:[file stringByAppendingPathComponent:@"test.png"]];
 }
 
 

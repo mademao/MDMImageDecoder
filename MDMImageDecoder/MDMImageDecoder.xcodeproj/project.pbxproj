@@ -13,6 +13,24 @@
 		41A723B1224487F500B4F77C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A723B0224487F500B4F77C /* Assets.xcassets */; };
 		41A723B4224487F500B4F77C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A723B2224487F500B4F77C /* LaunchScreen.storyboard */; };
 		41A723B7224487F500B4F77C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723B6224487F500B4F77C /* main.m */; };
+		41A723E32244892300B4F77C /* egif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723C02244892300B4F77C /* egif_lib.c */; };
+		41A723E42244892300B4F77C /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723C12244892300B4F77C /* dgif_lib.c */; };
+		41A723E52244892300B4F77C /* openbsd-reallocarray.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723C42244892300B4F77C /* openbsd-reallocarray.c */; };
+		41A723E62244892300B4F77C /* gifalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723C62244892300B4F77C /* gifalloc.c */; };
+		41A723E72244892300B4F77C /* quantize.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723C82244892300B4F77C /* quantize.c */; };
+		41A723E82244892300B4F77C /* gif_hash.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723C92244892300B4F77C /* gif_hash.c */; };
+		41A723E92244892300B4F77C /* gif_font.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723CB2244892300B4F77C /* gif_font.c */; };
+		41A723EA2244892300B4F77C /* gif_err.c in Sources */ = {isa = PBXBuildFile; fileRef = 41A723CD2244892300B4F77C /* gif_err.c */; };
+		41A723EB2244892300B4F77C /* giflib_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723CE2244892300B4F77C /* giflib_ios.m */; };
+		41A723EC2244892300B4F77C /* GifDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723CF2244892300B4F77C /* GifDecode.m */; };
+		41A723ED2244892300B4F77C /* MDMGIFImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723D02244892300B4F77C /* MDMGIFImageDecoder.m */; };
+		41A723EE2244892300B4F77C /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A723D92244892300B4F77C /* libpng.a */; };
+		41A723EF2244892300B4F77C /* MDMPNGImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723DA2244892300B4F77C /* MDMPNGImageDecoder.m */; };
+		41A723F02244892300B4F77C /* MDMImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723DD2244892300B4F77C /* MDMImageDecoder.m */; };
+		41A723F12244892300B4F77C /* MDMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723DE2244892300B4F77C /* MDMImage.m */; };
+		41A723F22244892300B4F77C /* MDMMMAPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A723E22244892300B4F77C /* MDMMMAPUtil.m */; };
+		41A723F622448B6000B4F77C /* gif in Resources */ = {isa = PBXBuildFile; fileRef = 41A723F422448B5F00B4F77C /* gif */; };
+		41A723F722448B6000B4F77C /* png in Resources */ = {isa = PBXBuildFile; fileRef = 41A723F522448B5F00B4F77C /* png */; };
 		7E5E1B484CB6616D57AE494B /* libPods-MDMImageDecoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D2DA9477315F6846421D91 /* libPods-MDMImageDecoder.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +46,38 @@
 		41A723B3224487F500B4F77C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41A723B5224487F500B4F77C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41A723B6224487F500B4F77C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		41A723C02244892300B4F77C /* egif_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = egif_lib.c; sourceTree = "<group>"; };
+		41A723C12244892300B4F77C /* dgif_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dgif_lib.c; sourceTree = "<group>"; };
+		41A723C22244892300B4F77C /* gif_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_hash.h; sourceTree = "<group>"; };
+		41A723C32244892300B4F77C /* gif_lib_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_lib_private.h; sourceTree = "<group>"; };
+		41A723C42244892300B4F77C /* openbsd-reallocarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "openbsd-reallocarray.c"; sourceTree = "<group>"; };
+		41A723C52244892300B4F77C /* giflib_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = giflib_ios.h; sourceTree = "<group>"; };
+		41A723C62244892300B4F77C /* gifalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gifalloc.c; sourceTree = "<group>"; };
+		41A723C72244892300B4F77C /* GifDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifDecode.h; sourceTree = "<group>"; };
+		41A723C82244892300B4F77C /* quantize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quantize.c; sourceTree = "<group>"; };
+		41A723C92244892300B4F77C /* gif_hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_hash.c; sourceTree = "<group>"; };
+		41A723CA2244892300B4F77C /* giflib-ios-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "giflib-ios-Prefix.pch"; sourceTree = "<group>"; };
+		41A723CB2244892300B4F77C /* gif_font.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_font.c; sourceTree = "<group>"; };
+		41A723CC2244892300B4F77C /* gif_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_lib.h; sourceTree = "<group>"; };
+		41A723CD2244892300B4F77C /* gif_err.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_err.c; sourceTree = "<group>"; };
+		41A723CE2244892300B4F77C /* giflib_ios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = giflib_ios.m; sourceTree = "<group>"; };
+		41A723CF2244892300B4F77C /* GifDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifDecode.m; sourceTree = "<group>"; };
+		41A723D02244892300B4F77C /* MDMGIFImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMGIFImageDecoder.m; sourceTree = "<group>"; };
+		41A723D12244892300B4F77C /* MDMGIFImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMGIFImageDecoder.h; sourceTree = "<group>"; };
+		41A723D52244892300B4F77C /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
+		41A723D62244892300B4F77C /* pnglibconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pnglibconf.h; sourceTree = "<group>"; };
+		41A723D72244892300B4F77C /* pngconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngconf.h; sourceTree = "<group>"; };
+		41A723D92244892300B4F77C /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpng.a; sourceTree = "<group>"; };
+		41A723DA2244892300B4F77C /* MDMPNGImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMPNGImageDecoder.m; sourceTree = "<group>"; };
+		41A723DB2244892300B4F77C /* MDMPNGImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMPNGImageDecoder.h; sourceTree = "<group>"; };
+		41A723DD2244892300B4F77C /* MDMImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMImageDecoder.m; sourceTree = "<group>"; };
+		41A723DE2244892300B4F77C /* MDMImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMImage.m; sourceTree = "<group>"; };
+		41A723DF2244892300B4F77C /* MDMMMAPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMMMAPUtil.h; sourceTree = "<group>"; };
+		41A723E02244892300B4F77C /* MDMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMImage.h; sourceTree = "<group>"; };
+		41A723E12244892300B4F77C /* MDMImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMImageDecoder.h; sourceTree = "<group>"; };
+		41A723E22244892300B4F77C /* MDMMMAPUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMMMAPUtil.m; sourceTree = "<group>"; };
+		41A723F422448B5F00B4F77C /* gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gif; sourceTree = "<group>"; };
+		41A723F522448B5F00B4F77C /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; path = png; sourceTree = "<group>"; };
 		6C542644426B03F3E90C14C4 /* Pods-MDMImageDecoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDMImageDecoder.debug.xcconfig"; path = "Target Support Files/Pods-MDMImageDecoder/Pods-MDMImageDecoder.debug.xcconfig"; sourceTree = "<group>"; };
 		6EAB0EB2D0D67B09E2094AB0 /* Pods-MDMImageDecoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDMImageDecoder.release.xcconfig"; path = "Target Support Files/Pods-MDMImageDecoder/Pods-MDMImageDecoder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E5E1B484CB6616D57AE494B /* libPods-MDMImageDecoder.a in Frameworks */,
+				41A723EE2244892300B4F77C /* libpng.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +116,8 @@
 		41A723A6224487F300B4F77C /* MDMImageDecoder */ = {
 			isa = PBXGroup;
 			children = (
+				41A723F322448B5100B4F77C /* Files */,
+				41A723BD2244892300B4F77C /* MDMImageDecoder */,
 				41A723A7224487F300B4F77C /* AppDelegate.h */,
 				41A723A8224487F300B4F77C /* AppDelegate.m */,
 				41A723AA224487F300B4F77C /* ViewController.h */,
@@ -76,6 +129,108 @@
 				41A723B6224487F500B4F77C /* main.m */,
 			);
 			path = MDMImageDecoder;
+			sourceTree = "<group>";
+		};
+		41A723BD2244892300B4F77C /* MDMImageDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				41A723BE2244892300B4F77C /* MDMGIFImageDecoder */,
+				41A723D22244892300B4F77C /* MDMPNGImageDecoder */,
+				41A723DC2244892300B4F77C /* MDMImage */,
+			);
+			path = MDMImageDecoder;
+			sourceTree = "<group>";
+		};
+		41A723BE2244892300B4F77C /* MDMGIFImageDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				41A723BF2244892300B4F77C /* giflib-ios */,
+				41A723D12244892300B4F77C /* MDMGIFImageDecoder.h */,
+				41A723D02244892300B4F77C /* MDMGIFImageDecoder.m */,
+			);
+			path = MDMGIFImageDecoder;
+			sourceTree = "<group>";
+		};
+		41A723BF2244892300B4F77C /* giflib-ios */ = {
+			isa = PBXGroup;
+			children = (
+				41A723C02244892300B4F77C /* egif_lib.c */,
+				41A723C12244892300B4F77C /* dgif_lib.c */,
+				41A723C22244892300B4F77C /* gif_hash.h */,
+				41A723C32244892300B4F77C /* gif_lib_private.h */,
+				41A723C42244892300B4F77C /* openbsd-reallocarray.c */,
+				41A723C52244892300B4F77C /* giflib_ios.h */,
+				41A723C62244892300B4F77C /* gifalloc.c */,
+				41A723C72244892300B4F77C /* GifDecode.h */,
+				41A723C82244892300B4F77C /* quantize.c */,
+				41A723C92244892300B4F77C /* gif_hash.c */,
+				41A723CA2244892300B4F77C /* giflib-ios-Prefix.pch */,
+				41A723CB2244892300B4F77C /* gif_font.c */,
+				41A723CC2244892300B4F77C /* gif_lib.h */,
+				41A723CD2244892300B4F77C /* gif_err.c */,
+				41A723CE2244892300B4F77C /* giflib_ios.m */,
+				41A723CF2244892300B4F77C /* GifDecode.m */,
+			);
+			path = "giflib-ios";
+			sourceTree = "<group>";
+		};
+		41A723D22244892300B4F77C /* MDMPNGImageDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				41A723D32244892300B4F77C /* libpng */,
+				41A723DB2244892300B4F77C /* MDMPNGImageDecoder.h */,
+				41A723DA2244892300B4F77C /* MDMPNGImageDecoder.m */,
+			);
+			path = MDMPNGImageDecoder;
+			sourceTree = "<group>";
+		};
+		41A723D32244892300B4F77C /* libpng */ = {
+			isa = PBXGroup;
+			children = (
+				41A723D42244892300B4F77C /* include */,
+				41A723D82244892300B4F77C /* lib */,
+			);
+			path = libpng;
+			sourceTree = "<group>";
+		};
+		41A723D42244892300B4F77C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				41A723D52244892300B4F77C /* png.h */,
+				41A723D62244892300B4F77C /* pnglibconf.h */,
+				41A723D72244892300B4F77C /* pngconf.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		41A723D82244892300B4F77C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				41A723D92244892300B4F77C /* libpng.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		41A723DC2244892300B4F77C /* MDMImage */ = {
+			isa = PBXGroup;
+			children = (
+				41A723E02244892300B4F77C /* MDMImage.h */,
+				41A723DE2244892300B4F77C /* MDMImage.m */,
+				41A723E12244892300B4F77C /* MDMImageDecoder.h */,
+				41A723DD2244892300B4F77C /* MDMImageDecoder.m */,
+				41A723DF2244892300B4F77C /* MDMMMAPUtil.h */,
+				41A723E22244892300B4F77C /* MDMMMAPUtil.m */,
+			);
+			path = MDMImage;
+			sourceTree = "<group>";
+		};
+		41A723F322448B5100B4F77C /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				41A723F422448B5F00B4F77C /* gif */,
+				41A723F522448B5F00B4F77C /* png */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 		4D50990F097635F8D773EC93 /* Frameworks */ = {
@@ -153,7 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A723F722448B6000B4F77C /* png in Resources */,
 				41A723B4224487F500B4F77C /* LaunchScreen.storyboard in Resources */,
+				41A723F622448B6000B4F77C /* gif in Resources */,
 				41A723B1224487F500B4F77C /* Assets.xcassets in Resources */,
 				41A723AF224487F300B4F77C /* Main.storyboard in Resources */,
 			);
@@ -191,9 +348,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A723EF2244892300B4F77C /* MDMPNGImageDecoder.m in Sources */,
+				41A723E42244892300B4F77C /* dgif_lib.c in Sources */,
+				41A723EC2244892300B4F77C /* GifDecode.m in Sources */,
+				41A723F02244892300B4F77C /* MDMImageDecoder.m in Sources */,
+				41A723E62244892300B4F77C /* gifalloc.c in Sources */,
+				41A723EB2244892300B4F77C /* giflib_ios.m in Sources */,
+				41A723E32244892300B4F77C /* egif_lib.c in Sources */,
+				41A723E52244892300B4F77C /* openbsd-reallocarray.c in Sources */,
+				41A723EA2244892300B4F77C /* gif_err.c in Sources */,
+				41A723E72244892300B4F77C /* quantize.c in Sources */,
 				41A723AC224487F300B4F77C /* ViewController.m in Sources */,
+				41A723E82244892300B4F77C /* gif_hash.c in Sources */,
+				41A723E92244892300B4F77C /* gif_font.c in Sources */,
 				41A723B7224487F500B4F77C /* main.m in Sources */,
+				41A723ED2244892300B4F77C /* MDMGIFImageDecoder.m in Sources */,
+				41A723F22244892300B4F77C /* MDMMMAPUtil.m in Sources */,
 				41A723A9224487F300B4F77C /* AppDelegate.m in Sources */,
+				41A723F12244892300B4F77C /* MDMImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +515,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MDMImageDecoder/MDMImageDecoder/MDMPNGImageDecoder/libpng/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mademao.MDMImageDecoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,6 +536,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MDMImageDecoder/MDMImageDecoder/MDMPNGImageDecoder/libpng/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mademao.MDMImageDecoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
