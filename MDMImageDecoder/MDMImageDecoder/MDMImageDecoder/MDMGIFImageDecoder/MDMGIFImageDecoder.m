@@ -31,8 +31,6 @@
     
     long _currentDataOffset;
     UIImage * _lastDecodedImage;
-    
-    BOOL hasDisposeDoNot;
 }
 
 - (int)readImageData:(GifByteType *)buf byLength:(int)length;
@@ -232,10 +230,7 @@ END:
                 case IMAGE_DESC_RECORD_TYPE: {
                     CGImageRef image = NULL;
                     NSLog(@"-->decode %@", @(_graphicsControlBlock.DisposalMode));
-                    errorCode = renderGifFrameWithBufferSize(_gifFileType, _gifRowType, context, contextBuffer, nextContextBuffer, hasDisposeDoNot, _graphicsControlBlock, &image, self.imageBytesPerFrame);
-                    if (_graphicsControlBlock.DisposalMode == DISPOSE_DO_NOT) {
-                        hasDisposeDoNot = YES;
-                    }
+                    errorCode = renderGifFrameWithBufferSize(_gifFileType, _gifRowType, context, contextBuffer, nextContextBuffer, _graphicsControlBlock, &image, self.imageBytesPerFrame);
                     if (errorCode) {
                         goto END;
                     }

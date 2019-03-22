@@ -78,7 +78,7 @@ void renderGifRowWithRowWidth( PixelRGBA *contextBuffer, GifRowType rowBuffer,
 }
 
 int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
-                   CGContextRef context, PixelRGBA *contextBuffer, PixelRGBA *nextContextBuffer, BOOL hasDisposeDoNot,
+                   CGContextRef context, PixelRGBA *contextBuffer, PixelRGBA *nextContextBuffer,
                    GraphicsControlBlock gcb,
                    CGImageRef *image, size_t bufferSize)
 {
@@ -145,12 +145,7 @@ int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
                 break;
             }
             case DISPOSE_BACKGROUND: {
-                if (hasDisposeDoNot) {
-                    memcpy(nextContextBuffer, contextBuffer, bufferSize);
-                } else {
-                    memset(nextContextBuffer, gifFile->SBackGroundColor, bufferSize);
-//                    memset(nextContextBuffer, 0, bufferSize);
-                }
+                memset(nextContextBuffer, gifFile->SBackGroundColor, bufferSize);
                 break;
             }
             case DISPOSE_PREVIOUS: {
@@ -173,7 +168,7 @@ int renderGifFrame( GifFileType *gifFile, GifRowType rowBuffer,
                    GraphicsControlBlock gcb,
                    CGImageRef *image ) {
     
-    return renderGifFrameWithBufferSize(gifFile, rowBuffer, context, contextBuffer, NULL, NO, gcb, image, gifFile->SWidth * 4 * gifFile->SHeight);
+    return renderGifFrameWithBufferSize(gifFile, rowBuffer, context, contextBuffer, NULL, gcb, image, gifFile->SWidth * 4 * gifFile->SHeight);
     
 //    Byte *tmp = NULL;
 //    unsigned long bufferSize = gifFile->SWidth * 4 * gifFile->SHeight;
