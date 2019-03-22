@@ -145,7 +145,20 @@ int renderGifFrameWithBufferSize( GifFileType *gifFile, GifRowType rowBuffer,
                 break;
             }
             case DISPOSE_BACKGROUND: {
-                memset(nextContextBuffer, gifFile->SBackGroundColor, bufferSize);
+                memcpy(nextContextBuffer, contextBuffer, bufferSize);
+                int row = gifFile->Image.Top;
+                int col = gifFile->Image.Left;
+                int width = gifFile->Image.Width;
+                int height = gifFile->Image.Height;
+                for (int h = row; h < row + height; h++) {
+                    for (int w = col; w < col + width; w++) {
+                        int pixIndex = h * (int)(bufferSize / (4 * gifFile->SHeight)) + w;
+                        nextContextBuffer[pixIndex].red = gifFile->SBackGroundColor;
+                        nextContextBuffer[pixIndex].green = gifFile->SBackGroundColor;
+                        nextContextBuffer[pixIndex].blue = gifFile->SBackGroundColor;
+                        nextContextBuffer[pixIndex].alpha = gifFile->SBackGroundColor;
+                    }
+                }
                 break;
             }
             case DISPOSE_PREVIOUS: {

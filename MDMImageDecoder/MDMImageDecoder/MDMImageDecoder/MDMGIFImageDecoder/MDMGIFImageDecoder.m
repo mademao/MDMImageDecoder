@@ -184,7 +184,6 @@ END:
     
     UIImage *retImage = nil;
     int errorCode = 0;
-    NSLog(@"decode-->%@", @(_currentIndexToDecode));
     void *contextBuffer = (void *)_contextBuffer + self.imageBytesPerFrame * _currentIndexToDecode;
     CGContextRef context = _contextRefArray[_currentIndexToDecode];
     if (context == NULL) {
@@ -229,7 +228,6 @@ END:
                 }
                 case IMAGE_DESC_RECORD_TYPE: {
                     CGImageRef image = NULL;
-                    NSLog(@"-->decode %@", @(_graphicsControlBlock.DisposalMode));
                     errorCode = renderGifFrameWithBufferSize(_gifFileType, _gifRowType, context, contextBuffer, nextContextBuffer, _graphicsControlBlock, &image, self.imageBytesPerFrame);
                     if (errorCode) {
                         goto END;
@@ -258,7 +256,6 @@ END:
         retImage = [UIImage imageWithCGImage:image];
         CGImageRelease(image);
         image = NULL;
-        [UIImagePNGRepresentation(retImage) writeToFile:[NSString stringWithFormat:@"/Users/mademao/Desktop/RetImage1/%@.png", @(_currentIndexToDecode)] atomically:YES];
         goto END;
     }
     
