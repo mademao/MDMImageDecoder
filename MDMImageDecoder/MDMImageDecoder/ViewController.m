@@ -35,12 +35,13 @@
 {
     NSString *file = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"gif"];
     self.imageView.image = [YYImage imageWithContentsOfFile:[file stringByAppendingPathComponent:@"wolaile.gif"]];
+//    self.imageView.image = [YYImage imageWithContentsOfFile:@"/Users/mademao/Desktop/test.gif"];
 }
 
 - (void)showPNG
 {
     NSString *file = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"png"];
-    self.imageView.image = [YYImage imageWithContentsOfFile:[file stringByAppendingPathComponent:@"test.png"]];
+    self.imageView.image = [YYImage imageWithContentsOfFile:[file stringByAppendingPathComponent:@"dot.png"]];
 }
 
 

@@ -169,8 +169,6 @@ void read_png(png_structp png_ptr, png_bytep data, png_size_t len)
         bit_depth = png_get_bit_depth(png_ptr, info_ptr);
         number_of_passes = png_set_interlace_handling(png_ptr);
         
-        BOOL hasAlpha = (color_type & PNG_COLOR_MASK_ALPHA);
-        
         if (bit_depth == 16) {
             png_set_strip_16(png_ptr);
         }
@@ -188,6 +186,9 @@ void read_png(png_structp png_ptr, png_bytep data, png_size_t len)
             png_set_gray_to_rgb(png_ptr);
         }
         png_read_update_info(png_ptr, info_ptr);
+        
+        color_type = png_get_color_type(png_ptr, info_ptr);
+        BOOL hasAlpha = (color_type & PNG_COLOR_MASK_ALPHA);
         
         _width = width;
         _height = height;
